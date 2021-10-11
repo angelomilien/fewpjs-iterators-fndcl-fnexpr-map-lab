@@ -13,5 +13,10 @@ const tutorials = [
 
 const titleCased = () => {
   // use the .map method on the tutorials to return a new array
-  return tutorials
+  return tutorials.map(sentence => {
+    const words = sentence.split(' ');
+    const capitalizedWords = words.map(word => word.charAt(0).toUpperCase() + word.slice(1));
+    const newTitle = capitalizedWords.join(' ');
+    return newTitle;
+  });
 }
